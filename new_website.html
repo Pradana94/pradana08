@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Briket Energi | Solusi Energi Alternatif Berkualitas</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color: #2E7D32; /* Hijau Energi */
+      --secondary-color: #FF9800; /* Oranye Api */
+      --dark-color: #1B1B1B; /* Hitam Arang */
+      --light-color: #F5F5F5;
+      --accent-color: #795548; /* Coklat Kayu */
+    }
+    
+    body { 
+      font-family: 'Inter', sans-serif; 
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    /* NAVBAR */
+    .navbar {
+      background-color: var(--accent-color) !important;
+      padding: 15px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    
+    .navbar-dark .navbar-nav .nav-link {
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+      padding: 8px 15px;
+      margin: 0 3px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-dark .navbar-nav .nav-link:hover {
+      background-color: rgba(94, 70, 34, 0.1);
+      color: var(--secondary-color);
+    }
+    
+    .brand-logo {
+      border-radius: 8px;
+      border: 2px solid var(--secondary-color);
+      padding: 2px;
+    }
+    
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(rgba(43, 43, 43, 0.85), rgba(0,0,0,0.8)),
+      url('./Nyala\ Briket.jpg') center/cover no-repeat;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-top: 76px;
+    }
+    
+    .hero-content {
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    .hero h1 {
+      font-weight: 800;
+      font-size: 3.2rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .hero .lead {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: rgba(255,255,255,0.9);
+    }
+    
+    /* BUTTON STYLING */
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      padding: 12px 30px;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background-color: #1B5E20;
+      border-color: #1B5E20;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .btn-outline-primary {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+      border-radius: 50px;
+      font-weight: 600;
+    }
+    
+    .btn-outline-primary:hover {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    
+    /* SECTION STYLING */
+    .section-padding { 
+      padding: 100px 0; 
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 3rem;
+      color: var(--dark-color);
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 70px;
+      height: 4px;
+      background: var(--secondary-color);
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    /* CARD STYLING */
+    .card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      height: 100%;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+    
+    .card-body {
+      padding: 1.8rem;
+    }
+    
+    .card-title {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    /* PRODUK SECTION */
+    .produk-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+    }
+    
+    /* Pricing Table Styling */
+.pricing-table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.pricing-table:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.pricing-header {
+  background: linear-gradient(135deg, var(--primary-color), #1B5E20);
+}
+
+.pricing-body {
+  font-size: 0.9rem;
+}
+
+.table-sm td {
+  padding: 8px 0;
+}
+
+/* Hover effect on table rows */
+.pricing-body tbody tr:hover {
+  background-color: rgba(46, 125, 50, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pricing-body {
+    font-size: 0.85rem;
+  }
+}
+    /* DOKUMENTASI */
+    .dok-card {
+      background: linear-gradient(145deg, #ffffff, #f5f5f5);
+      border-left: 4px solid var(--primary-color);
+      height: 100%;
+    }
+    
+    /* KONTAK SECTION */
+    .contact-info {
+      background: var(--primary-color);
+      color: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 15px 30px rgba(46, 125, 50, 0.2);
+    }
+    
+    .contact-info i {
+      color: var(--secondary-color);
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+    
+    /* FOOTER */
+    footer {
+      background: var(--dark-color);
+      color: #aaa;
+      padding: 50px 0 20px;
+    }
+    
+    .footer-links h5 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary-color);
+      padding-left: 5px;
+    }
+    
+    .social-icons a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      margin-right: 10px;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      background: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+    
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero .lead {
+        font-size: 1.1rem;
+      }
+      
+      .section-padding {
+        padding: 70px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#beranda">
+      <img src="kayu_bakar.jpg" 
+           alt="Logo Briket Energi" 
+           width="40" 
+           height="40"
+           class="me-2 brand-logo">
+      <div>
+        <span style="color: #FF9800;">Briket</span>
+        <span style="color: #fff;">Energi</span>
+        <small class="d-block" style="font-size: 0.7rem; color: #ccc; font-weight: normal;">
+          Charcoal Briket Specialist
+        </small>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#beranda"><i class="fas fa-home me-1"></i> Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tentang"><i class="fas fa-info-circle me-1"></i> Tentang</a></li>
+        <li class="nav-item"><a class="nav-link" href="#produk"><i class="fas fa-box-open me-1"></i> Produk</a></li>
+        <li class="nav-item"><a class="nav-link" href="#dokumentasi"><i class="fas fa-images me-1"></i> Dokumentasi</a></li>
+        <li class="nav-item"><a class="nav-link" href="#kontak"><i class="fas fa-phone-alt me-1"></i> Kontak</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero text-white" id="beranda">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center hero-content">
+        <h1 class="display-4 fw-bold mb-3">Solusi Charcoal Briket Berkualitas Tinggi</h1>
+        <p class="lead mb-5">Menghadirkan energi alternatif yang bersih, efisien, dan ramah lingkungan untuk kebutuhan rumah tangga, UMKM, dan industri.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="#produk" class="btn btn-primary btn-lg">
+            <i class="fas fa-box me-2"></i>Lihat Produk Kami
+          </a>
+          <a href="#kontak" class="btn btn-outline-light btn-lg">
+            <i class="fas fa-phone-alt me-2"></i>Hubungi Kami
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TENTANG -->
+<section class="section-padding" id="tentang">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <h2 class="section-title fw-bold mb-4">Tentang Kami</h2>
+        <p class="fs-5 mb-4">
+          <strong class="text-primary">Briket Energi</strong> adalah perusahaan produsen charcoal briket yang berkomitmen menyediakan bahan bakar alternatif berkualitas tinggi dengan standar internasional.
+        </p>
+        <p class="fs-5 mb-5">
+          Didirikan dengan visi untuk mengurangi ketergantungan pada bahan bakar fosil, kami menghadirkan solusi energi yang berkelanjutan dengan memanfaatkan limbah organik menjadi produk briket yang efisien dan ramah lingkungan.
+        </p>
+        <div class="row mt-5">
+          <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body text-center">
+                <i class="fas fa-leaf produk-icon"></i>
+                <h5 class="card-title">Ramah Lingkungan</h5>
+                <p class="card-text">Memanfaatkan limbah organik untuk mengurangi polusi</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body text-center">
+                <i class="fas fa-fire produk-icon"></i>
+                <h5 class="card-title">Efisiensi Tinggi</h5>
+                <p class="card-text">Nilai kalor tinggi dengan pembakaran yang stabil</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body text-center">
+                <i class="fas fa-truck produk-icon"></i>
+                <h5 class="card-title">Pengiriman Cepat</h5>
+                <p class="card-text">Melayani pengiriman ke seluruh Indonesia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUK -->
+<section class="section-padding bg-light" id="produk">
+  <div class="container">
+    <h2 class="section-title text-center fw-bold mb-5">Produk Kami</h2>
+    <p class="text-center fs-5 mb-5 text-muted">Berbagai jenis briket berkualitas untuk kebutuhan berbeda</p>
+    <div class="row g-4">
+      <!-- Produk 1: Charcoal Briket Kubus -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="arang kubus.jpg" class="card-img-top" alt="Charcoal Briket">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Charcoal Briket Kubus</h5>
+            <p class="card-text">Briket Arang Batok Kelapa Kubus adalah bahan bakar padat berbentuk kubus (cube) yang diproduksi dari arang tempurung kelapa berkualitas melalui proses mekanis terstandar. Ini merupakan produk unggulan dan paling populer di pasaran karena keseimbangan optimal antara performa, kemudahan penggunaan, dan harga yang kompetitif.</p>
+           
+            <!-- Detail Harga -->
+            <div class="pricing-table mt-4">
+              <div class="pricing-header bg-primary text-white py-2 rounded-top">
+                <h6 class="mb-0 fw-bold">DETAIL HARGA</h6>
+              </div>
+              <div class="pricing-body bg-white border border-top-0 rounded-bottom">
+                <table class="table table-sm table-borderless mb-0">
+                  <tbody>
+                    <tr>
+                      <td class="text-start ps-3">1-10 kg</td>
+                      <td class="text-end pe-3 fw-bold">Rp 8.500/kg</td>
+                    </tr>
+                    <tr class="bg-light">
+                      <td class="text-start ps-3">11-50 kg</td>
+                      <td class="text-end pe-3 fw-bold">Rp 7.800/kg</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start ps-3">51-100 kg</td>
+                      <td class="text-end pe-3 fw-bold">Rp 7.200/kg</td>
+                    </tr>
+                    <tr class="bg-light">
+                      <td class="text-start ps-3">> 100 kg</td>
+                      <td class="text-end pe-3 fw-bold text-success">Rp 6.500/kg</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="text-center py-2 border-top">
+                  <small class="text-muted">*Harga belum termasuk ongkir</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-4">
+              <span class="badge bg-primary">Harga Terjangkau</span>
+              <span class="badge bg-secondary ms-2">Tahan Lama</span>
+            </div>
+            <a href="#kontak" class="btn btn-primary mt-3">
+              <i class="fas fa-shopping-cart me-2"></i>Pesan Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Produk 2: Briket Hexagonal -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="Arang panjang.jpg" class="card-img-top" alt="Briket Hexagonal">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Briket Hexagonal</h5>
+            <p class="card-text">Briket Arang Batok Kelapa Hexagonal adalah bahan bakar premium berbentuk heksagonal (segienam) yang diproduksi dari arang tempurung kelapa berkualitas tinggi melalui proses teknologi modern. Bentuk hexagonal yang unik bukan hanya elemen estetika, tetapi memiliki fungsi teknis untuk meningkatkan efisiensi pembakaran dan kenyamanan penggunaan.</p>
+            
+            <!-- Detail Harga -->
+            <div class="pricing-table mt-4">
+              <div class="pricing-header bg-primary text-white py-2 rounded-top">
+                <h6 class="mb-0 fw-bold">DETAIL HARGA</h6>
+              </div>
+              <div class="pricing-body bg-white border border-top-0 rounded-bottom">
+                <table class="table table-sm table-borderless mb-0">
+                  <tbody>
+                    <tr>
+                      <td class="text-start ps-3">1-10 kg</td>
+                      <td class="text-end pe-3 fw-bold">Rp 9.200/kg</td>
+                    </tr>
+                    <tr class="bg-light">
+                      <td class="text-start ps-3">11-50 kg</td>
+                      <td class="text-end pe-3 fw-bold">Rp 8.500/kg</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start ps-3">51-100 kg</td>
+                      <td class="text-end pe-3 fw-bold">Rp 7.900/kg</td>
+                    </tr>
+                    <tr class="bg-light">
+                      <td class="text-start ps-3">> 100 kg</td>
+                      <td class="text-end pe-3 fw-bold text-success">Rp 7.200/kg</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="text-center py-2 border-top">
+                  <small class="text-muted">*Harga belum termasuk ongkir</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-4">
+              <span class="badge bg-primary">Ramah Lingkungan</span>
+              <span class="badge bg-secondary ms-2">Bentuk Unik</span>
+            </div>
+            <a href="#kontak" class="btn btn-primary mt-3">
+              <i class="fas fa-shopping-cart me-2"></i>Pesan Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Produk 3: Briket Sekam Padi -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="Arang sekem padi.jpg" class="card-img-top" alt="Briket Sekam Padi">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold">Briket Sekam Padi</h5>
+            <p class="card-text">Briket Sekam Padi adalah bahan bakar alternatif inovatif yang diproduksi dari limbah pertanian sekam padi (kulit gabah) yang dipadatkan melalui proses teknologi khusus. Ini merupakan solusi energi ramah lingkungan yang mengubah limbah pertanian yang biasanya dibuang atau dibakar secara sembarangan menjadi sumber energi bernilai tinggi.</p>
+            
+            <!-- Detail Harga -->
+            <div class="pricing-table mt-4">
+              <div class="pricing-header bg-primary text-white py-2 rounded-top">
+                <h6 class="mb-0 fw-bold">DETAIL HARGA</h6>
+              </div>
+              <div class="pricing-body bg-white border border-top-0 rounded-bottom">
+                <table class="table table-sm table-borderless mb-0">
+                  <tbody>
+                    <tr>
+                      <td class="text-start ps-3">1-10 kg</td>
+                      <td class="text-end pe-3 fw-bold">Rp 5.800/kg</td>
+                    </tr>
+                    <tr class="bg-light">
+                      <td class="text-start ps-3">11-50 kg</td>
+                      <td class="text-end pe-3 fw-bold">Rp 5.200/kg</td>
+                    </tr>
+                    <tr>
+                      <td class="text-start ps-3">51-100 kg</td>
+                      <td class="text-end pe-3 fw-bold">Rp 4.800/kg</td>
+                    </tr>
+                    <tr class="bg-light">
+                      <td class="text-start ps-3">> 100 kg</td>
+                      <td class="text-end pe-3 fw-bold text-success">Rp 4.300/kg</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="text-center py-2 border-top">
+                  <small class="text-muted">*Harga belum termasuk ongkir</small>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-4">
+              <span class="badge bg-primary">Hemat Biaya</span>
+              <span class="badge bg-secondary ms-2">Eco-Friendly</span>
+            </div>
+            <a href="#kontak" class="btn btn-primary mt-3">
+              <i class="fas fa-shopping-cart me-2"></i>Pesan Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Note tentang harga -->
+    <div class="alert alert-info mt-5 text-center">
+      <div class="d-flex align-items-center justify-content-center">
+        <i class="fas fa-info-circle me-2"></i>
+        <div>
+          <strong>Info Harga:</strong> Harga dapat berubah sewaktu-waktu. Untuk pemesanan dalam jumlah besar (>500 kg) hubungi kami untuk mendapatkan harga khusus.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOKUMENTASI -->
+<section class="section-padding" id="dokumentasi">
+  <div class="container">
+    <h2 class="section-title text-center fw-bold mb-5">Dokumentasi & Panduan</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card dok-card h-100">
+          <div class="card-body text-center p-4">
+            <i class="fas fa-book-open fa-3x mb-4 text-primary"></i>
+            <h5 class="fw-bold mb-3">Cara Penggunaan</h5>
+            <p class="mb-0">Panduan lengkap penggunaan briket secara efisien untuk hasil maksimal dengan konsumsi minimal.</p>
+            <a href="#" class="btn btn-sm btn-primary mt-4">Lihat Panduan</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card dok-card h-100">
+          <div class="card-body text-center p-4">
+            <i class="fas fa-box fa-3x mb-4 text-primary"></i>
+            <h5 class="fw-bold mb-3">Penyimpanan</h5>
+            <p class="mb-0">Tips penyimpanan yang tepat untuk menjaga kualitas briket tetap optimal dalam jangka panjang.</p>
+            <a href="#" class="btn btn-sm btn-primary mt-4">Pelajari</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card dok-card h-100">
+          <div class="card-body text-center p-4">
+            <i class="fas fa-clipboard-list fa-3x mb-4 text-primary"></i>
+            <h5 class="fw-bold mb-3">Spesifikasi Teknis</h5>
+            <p class="mb-0">Detail teknis lengkap dan nilai kalor produk untuk kebutuhan perhitungan yang akurat.</p>
+            <a href="#" class="btn btn-sm btn-primary mt-4">Download PDF</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section class="section-padding bg-light" id="kontak">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="section-title text-center fw-bold mb-5">Hubungi Kami</h2>
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <div class="contact-info text-center">
+              <h3 class="mb-4">Briket Charcoal Energi</h3>
+              <p class="mb-4"><i class="fas fa-envelope"></i> info@briketenergi.com</p>
+              <p class="mb-4"><i class="fas fa-phone-alt"></i> 0812-345-6789</p>
+              <p class="mb-4"><i class="fas fa-map-marker-alt"></i> Jl. Jl. S. Supriadi No.48, Bandungrejosari, Kec. Sukun, Kota Malang, Jawa Timur 65148</p>
+              <div class="social-icons mt-4">
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <h5 class="mb-3">Briket Charcoal Energi</h5>
+        <p>Solusi energi alternatif berkualitas untuk masa depan yang lebih hijau dan berkelanjutan.</p>
+        <div class="social-icons mt-3">
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 mb-4">
+        <h5>Menu</h5>
+        <div class="footer-links">
+          <a href="#beranda">Beranda</a>
+          <a href="#tentang">Tentang Kami</a>
+          <a href="#produk">Produk</a>
+          <a href="#dokumentasi">Dokumentasi</a>
+          <a href="#kontak">Kontak</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5>Produk</h5>
+        <div class="footer-links">
+          <a href="#produk">Charcoal Briket</a>
+          <a href="#produk">Briket Hexagonal</a>
+          <a href="#produk">Briket Sekam Padi</a>
+          <a href="#produk">Custom Order</a>
+        </div>
+      </div>
+      <div class="col-lg-3 mb-4">
+        <h5>Kontak</h5>
+        <p><i class="fas fa-map-marker-alt me-2"></i> Malang, Jawa Timur</p>
+        <p><i class="fas fa-phone-alt me-2"></i> 0812-345-6789</p>
+        <p><i class="fas fa-envelope me-2"></i> info@briketenergi.com</p>
+      </div>
+    </div>
+    <hr class="my-4" style="border-color: #444;">
+    <div class="row">
+      <div class="col-md-6 text-center text-md-start">
+        <p class="mb-0">&copy; 2026 Briket Charcoal Energi. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <p class="mb-0">di desain bersama <i class="fas fa-heart text-danger"></i> Eka Oktavia </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // Smooth scroll untuk navbar
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if(targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if(targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+        
+        // Update active nav link
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+          link.classList.remove('active');
+        });
+        this.classList.add('active');
+      }
+    });
+  });
+  
+  // Navbar background change on scroll
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+      navbar.style.padding = '10px 0';
+      navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+    } else {
+      navbar.style.padding = '15px 0';
+      navbar.style.boxShadow = 'none';
+    }
+  });
+</script>
+</body>
+</html>
